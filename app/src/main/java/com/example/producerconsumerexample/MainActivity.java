@@ -3,6 +3,7 @@ package com.example.producerconsumerexample;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.view.View;
 import android.widget.EditText;
 
 public class MainActivity extends AppCompatActivity {
@@ -12,11 +13,10 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         editText = findViewById(R.id.editText);
+    }
 
-        //Drop drop = new Drop();
-        //(new Thread(new Producer(drop))).start();
-        //(new Thread(new Consumer(drop, this))).start();
-
+    public void simpleThBClick(View v){
+        editText.setText("");
         BasicRunnable r1 = new BasicRunnable("Thread 1", 2000);
         BasicRunnable r2 = new BasicRunnable("Thread 2", 1500);
         BasicRunnable r3 = new BasicRunnable("Thread 3", 1000);
@@ -35,6 +35,13 @@ public class MainActivity extends AppCompatActivity {
         //these thread will wait for t1 to complete
         t2.start();
         t3.start();
+    }
+
+    public void prodecerConsumerThBClick(View v){
+        editText.setText("");
+        Drop drop = new Drop();
+        (new Thread(new Producer(drop))).start();
+        (new Thread(new Consumer(drop, this))).start();
 
     }
 

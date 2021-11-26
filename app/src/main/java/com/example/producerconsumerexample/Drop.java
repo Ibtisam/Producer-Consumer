@@ -13,6 +13,7 @@ public class Drop {
     public synchronized String take() {
         // Wait until message is
         // available.
+        //guarded block
         while (empty) {
             try {
                 wait();
