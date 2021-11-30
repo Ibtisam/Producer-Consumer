@@ -8,18 +8,18 @@ import androidx.appcompat.app.AppCompatActivity;
 import java.util.Random;
 
 public class Consumer implements Runnable {
-    private Drop drop;
+    private Package aPackage;
     private Context context;
     private String message;
 
-    public Consumer(Drop drop, Context context) {
-        this.drop = drop;
+    public Consumer(Package aPackage, Context context) {
+        this.aPackage = aPackage;
         this.context = context;
     }
 
     public void run() {
         Random random = new Random();
-        for (message = drop.take(); !message.equals("DONE"); message = drop.take()) {
+        for (message = aPackage.take(); !message.equals("DONE"); message = aPackage.take()) {
             ((AppCompatActivity) context).runOnUiThread(new Runnable() {
                 @Override
                 public void run() {

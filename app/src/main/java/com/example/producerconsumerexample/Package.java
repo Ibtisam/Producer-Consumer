@@ -1,6 +1,6 @@
 package com.example.producerconsumerexample;
 
-public class Drop {
+public class Package {
     // Message sent from producer
     // to consumer.
     private String message;

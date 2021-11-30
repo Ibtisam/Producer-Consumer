@@ -3,10 +3,10 @@ package com.example.producerconsumerexample;
 import java.util.Random;
 
 public class Producer implements Runnable {
-    private Drop drop;
+    private Package aPackage;
 
-    public Producer(Drop drop) {
-        this.drop = drop;
+    public Producer(Package aPackage) {
+        this.aPackage = aPackage;
     }
 
     public void run() {
@@ -21,12 +21,12 @@ public class Producer implements Runnable {
         for (int i = 0;
              i < importantInfo.length;
              i++) {
-            drop.put(importantInfo[i]);
+            aPackage.put(importantInfo[i]);
             try {
-                Thread.sleep(random.nextInt(5000));
+                Thread.sleep(random.nextInt(2500));
             } catch (InterruptedException e) {
             }
         }
-        drop.put("DONE");
+        aPackage.put("DONE");
     }
 }

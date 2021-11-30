@@ -26,17 +26,37 @@
             android:id="@+id/simpleThB"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:layout_weight="50"
+            android:layout_weight="25"
             android:onClick="simpleThBClick"
-            android:text="Simple Thread" />
+            android:text="Simple Thread"
+            android:textSize="10sp" />
+
+        <Button
+            android:id="@+id/execB"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="25"
+            android:onClick="execServBClick"
+            android:text="Using ExecutorService"
+            android:textSize="10sp" />
+
+        <Button
+            android:id="@+id/thpoolB"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="25"
+            android:onClick="threadPoolBClick"
+            android:text="Using ThreadPool"
+            android:textSize="10sp" />
 
         <Button
             android:id="@+id/proConThB"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:layout_weight="50"
+            android:layout_weight="25"
             android:onClick="prodecerConsumerThBClick"
-            android:text="Producer Consumer" />
+            android:text="Producer Consumer"
+            android:textSize="10sp" />
 
     </LinearLayout>
 
